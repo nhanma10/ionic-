@@ -1,0 +1,44 @@
+<ion-app>
+    <ion-menu contentId="main-content" side="start">
+        <ion-header>
+
+            <ion-toolbar>
+                <ion-title>
+                    <ion-icon slot="start" name="home"></ion-icon>Menu
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+                    <ion-item [routerLink]="page.path" routerDirection="root" [class.active-menu]="activePath === page.path">
+                        {{page.name}}
+                        <ion-icon slot="start" name="{{page.logo}}"></ion-icon>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content" main></ion-router-outlet>
+    <ion-tabs>
+
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="nhap data">
+                <ion-icon name="logo-windows"></ion-icon>
+                <ion-label>Nhap Du Lieu</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="tinh toan">
+                <ion-icon name="calculator"></ion-icon>
+                <ion-label>Tinh Toan</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="ket qua">
+                <ion-icon name="analytics"></ion-icon>
+                <ion-label>Ket qua</ion-label>
+            </ion-tab-button>
+        </ion-tab-bar>
+
+    </ion-tabs>
+</ion-app>

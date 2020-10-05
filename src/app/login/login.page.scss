@@ -1,0 +1,52 @@
+.ion-padding-start {
+    padding: 16px
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+
+ion-item-content {
+    background-color: #4169E1;
+}
+
+ion-icon {
+    font-size: 20px;
+}
+
+ion-icon {
+    color: #00AFF0
+}
+
+.label-to {
+    text-align: justify;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    color: #1cf000;
+}
+
+.label-nho {
+    font-size: 11px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 102, 128);
+}
+
+ion-col.cot-nho {
+    flex: 0 0 4px;
+    padding: 0;
+    margin-right: 10px;
+}
+
+ion-item {
+    --min-height: 16px;
+}
+
+ion-input {
+    font-size: 13px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,128 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title size="small">
+            TÍNH TOÁN ỨNG SUẤT HỮU HIỆU
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-content padding>
+        <ion-item>
+            <ion-label class="label-to">1.TIẾT DIỆN DỌC:</ion-label>
+            <ion-input readonly> </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Đường kính ngoài D (mm) :{{D1}} </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Đường kính trong (mm) : </ion-label>
+            <ion-input readonly [(ngModel)]="D2" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Diện tích cọc (cm<sup>2</sup>) : </ion-label>
+            <ion-input readonly [(ngModel)]="dtCocA0" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="success">2.BỐ TRÍ CỐT THÉP</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Đường kinh cáp &Oslash;(mm): </ion-label>
+            <ion-select value="7.1" okText="Okay" cancelText="Dismiss" [(ngModel)]="dkCap">
+                <ion-select-option value="9.3"> 9.3</ion-select-option>
+                <ion-select-option value="10.8"> 10.8</ion-select-option>
+                <ion-select-option value="12.4"> 12.4</ion-select-option>
+                <ion-select-option value="15.2"> 15.2</ion-select-option>
+                <ion-select-option value="9.5"> 9.5</ion-select-option>
+                <ion-select-option value="11.1"> 11.1</ion-select-option>
+                <ion-select-option value="12.7"> 12.7</ion-select-option>
+                <ion-select-option value="15.2"> 15.2</ion-select-option>
+                <ion-select-option value="8718"> 18</ion-select-option>
+            </ion-select>
+            <ion-input readonly [(ngModel)]="dkCap" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-range min=7 max=20 step=1 [(ngModel)]="soThanh" color="secondary">
+                <ion-icon range-left small name="ios-hammer"></ion-icon>
+                <ion-icon range-right name="md-hammer"></ion-icon>
+            </ion-range>
+            <ion-input [(ngModel)]="soThanh" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Diện tích A<sub>p</sub> (cm<sup>2</sup>): </ion-label>
+            <ion-input readonly [(ngModel)]="dienTich" type="number"></ion-input>
+            <ion-item>
+                <ion-label class="ion-text-wrap" position="floating">Ứng suất kéo đứt (Mpa) &sigma;<sub>pu</sub> :</ion-label>
+                <ion-input [(ngModel)]="ungXuatKeoDut" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="ion-text-wrap" position="floating">Ứng suất chảy dẻo (Mpa) &sigma;<sub>py</sub> :</ion-label>
+                <ion-input [(ngModel)]="ungXuatChayDeo" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="ion-text-wrap" position="floating">Ứng suất căng ban đầu (Mpa) &sigma;<sub>pi</sub>:</ion-label>
+                <ion-input [(ngModel)]="xichmapi" type="number"></ion-input>
+            </ion-item>
+        </ion-item>
+        <ion-item>
+            <ion-label color="success">3.VẬT LIỆU</ion-label>
+        </ion-item>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle>Bê tông :</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-label class="ion-text-wrap" position="floating">Cấp độ bền Bê Tông: </ion-label>
+                <ion-item>
+                    <ion-select value="7.1" okText="Okay" cancelText="Dismiss" [(ngModel)]="Ec">
+                        <ion-select-option value="36"> B40</ion-select-option>
+                        <ion-select-option value="37"> B45</ion-select-option>
+                        <ion-select-option value="38"> B50</ion-select-option>
+                        <ion-select-option value="39">B55</ion-select-option>
+                        <ion-select-option value="39.5"> B60</ion-select-option>
+                        <ion-select-option value="41"> B70</ion-select-option>
+                        <ion-select-option value="42"> B80</ion-select-option>
+                        <ion-select-option value="42.5"> B90</ion-select-option>
+                        <ion-select-option value="43"> B100</ion-select-option>
+                    </ion-select>
+                    <ion-input readonly [(ngModel)]="Ec" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label class="ion-text-wrap" position="floating">Modun đàn hồi sau khi căng (Mpa) </ion-label>
+                    <ion-input [(ngModel)]="EcpMax" type="number"></ion-input>
+                </ion-item>
+            </ion-card-content>
+        </ion-card>
+        <ion-item>
+            <ion-label color="success">4.Tổn Thất Ứng Suất :</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Ứng suất nén ban đầu của thép chủ (Mpa) &sigma;<sub>pt</sub> :</ion-label>
+            <ion-input [(ngModel)]="xichmapt" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Ứng suất nén ban đầu của bê tông (Mpa) &sigma;<sub>cpt</sub> :</ion-label>
+            <ion-input [(ngModel)]="xichmacpt" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Tổn thất ứng suất do từ biến và co ngót (Mpa) &Delta;&sigma;<sub>p&psi;</sub> :</ion-label>
+            <ion-input [(ngModel)]="deltap" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Tổn thất ứng suất do chùng ứng suất &Delta;&sigma;<sub>r</sub> :</ion-label>
+            <ion-input [(ngModel)]="" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="success">5.Ứng Suất Hữu Hiệu Còn Lại :</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Ứng suất hữu hiệu trong thép chủ (Mpa) &sigma;<sub>cpt</sub> :</ion-label>
+            <ion-input [(ngModel)]="xichmape" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap" position="floating">Ứng suất hữu hiệu trong bê tông (Mpa) &sigma;<sub>cpt</sub> :</ion-label>
+            <ion-input [(ngModel)]="xichmace" type="number"></ion-input>
+        </ion-item>
+        <div class="btn-group">
+            <ion-button size="small" (click)="Tinhtoan()">Tính Toán</ion-button>
+        </div>
+    </ion-content>

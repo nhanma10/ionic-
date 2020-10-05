@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title size="small">
+            NHẬP DỮ LIỆU
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-content padding>
+        <ion-item>
+            <ion-label class="label-to" color="success">1.TIẾT DIỆN CỌC:</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Đường kính ngoài D (mm) : </ion-label>
+            <ion-select value="300" okText="Okay" cancelText="Dismiss" [(ngModel)]="D1">
+                <ion-select-option value="300">300</ion-select-option>
+                <ion-select-option value="350">350</ion-select-option>
+                <ion-select-option value="400">400</ion-select-option>
+                <ion-select-option value="450">450</ion-select-option>
+                <ion-select-option value="500">500</ion-select-option>
+                <ion-select-option value="600">600</ion-select-option>
+                <ion-select-option value="700">700</ion-select-option>
+                <ion-select-option value="800">800</ion-select-option>
+                <ion-select-option value="900">900</ion-select-option>
+                <ion-select-option value="1000">1000</ion-select-option>
+                <ion-select-option value="1100">1100</ion-select-option>
+                <ion-select-option value="1200">1200</ion-select-option>
+            </ion-select>
+            <ion-input [(ngModel)]="D1" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Đường kính trong (mm) : </ion-label>
+            <ion-input readonly [(ngModel)]="D2" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-to" color="success">2.BỐ TRÍ CỐT THÉP</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Đường kinh cáp &Oslash;(mm): </ion-label>
+            <ion-select value="7.1" okText="Nhập" cancelText="Cancel" [(ngModel)]="dkCap">
+                <ion-select-option value="9.3"> 9.3</ion-select-option>
+                <ion-select-option value="10.8"> 10.8</ion-select-option>
+                <ion-select-option value="12.4"> 12.4</ion-select-option>
+                <ion-select-option value="15.2"> 15.2</ion-select-option>
+                <ion-select-option value="9.5"> 9.5</ion-select-option>
+                <ion-select-option value="11.1"> 11.1</ion-select-option>
+                <ion-select-option value="12.7"> 12.7</ion-select-option>
+                <ion-select-option value="15.2"> 15.2</ion-select-option>
+                <ion-select-option value="8718"> 18</ion-select-option>
+            </ion-select>
+            <ion-input readonly [(ngModel)]="dkCap" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Số Thanh: </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-range min=7 max=20 step=1 [(ngModel)]="soThanh" color="secondary">
+            </ion-range>
+            <ion-input [(ngModel)]="soThanh" type="number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label class="label-nho">Ứng suất kéo đứt (Mpa) &sigma;<sub>pu</sub> :</ion-label>
+            <ion-input [(ngModel)]="ungXuatKeoDut" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Ứng suất chảy dẻo (Mpa) &sigma;<sub>py</sub> :</ion-label>
+            <ion-input [(ngModel)]="ungXuatChayDeo" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Ứng suất căng ban đầu (Mpa) &sigma;<sub>pi</sub>:</ion-label>
+            <ion-input [(ngModel)]="xichmapi" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-to">3.VẬT LIỆU</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Cấp độ bền Bê Tông: </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-select value="7.1" okText="Okay" cancelText="Dismiss" [(ngModel)]="Ec">
+                <ion-select-option value="36"> B40</ion-select-option>
+                <ion-select-option value="37"> B45</ion-select-option>
+                <ion-select-option value="38"> B50</ion-select-option>
+                <ion-select-option value="39">B55</ion-select-option>
+                <ion-select-option value="39.5"> B60</ion-select-option>
+                <ion-select-option value="41"> B70</ion-select-option>
+                <ion-select-option value="42"> B80</ion-select-option>
+                <ion-select-option value="42.5"> B90</ion-select-option>
+                <ion-select-option value="43"> B100</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Mô-đun đàn hồi (Mpa) </ion-label>
+            <ion-input [(ngModel)]="Ec" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating" class="label-nho">Mô-đun đàn hồi sau khi căng (Mpa) </ion-label>
+            <ion-input [(ngModel)]="EcpMax" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Hệ số co ngót khô &epsilon; </ion-label>
+            <ion-input [(ngModel)]="epxilon" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho">Hệ số từ biến,&psi; </ion-label>
+            <ion-input [(ngModel)]="psi" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label-nho"> Hệ số chùng ứng suất k</ion-label>
+            <ion-input [(ngModel)]="k" type="number"></ion-input>
+        </ion-item>
+        <div class="btn-group">
+            <ion-button size="small" (click)="nhapdl()">Nhập Dữ Liệu</ion-button>
+        </div>
+    </ion-content>

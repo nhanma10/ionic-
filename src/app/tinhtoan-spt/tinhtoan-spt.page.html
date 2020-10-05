@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+        <ion-title size="small">
+            TÍNH TOÁN SỨC CHỊU TẢI THEO SPT
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-content padding>
+        <ion-card>
+            <ion-card-header>
+                <ion-item class="ion-text-justify">
+                    <ion-icon slot="start" name="construct-outline"></ion-icon>
+                    <ion-label class="label-to">TIẾT DIỆN CỌC:</ion-label>
+                </ion-item>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid fixed>
+                    <ion-row ion-align-center justify-content-end>
+                        <ion-col>
+                            <ion-item class="ion-text-justify">
+                                <ion-label class="label-nho">Đường kính ngoài (mm)</ion-label>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col>
+                            <ion-select value="300" okText="Okay" cancelText="Dismiss" [(ngModel)]="D1">
+                                <ion-select-option value="300">300</ion-select-option>
+                                <ion-select-option value="350">350</ion-select-option>
+                                <ion-select-option value="400">400</ion-select-option>
+                                <ion-select-option value="450">450</ion-select-option>
+                                <ion-select-option value="500">500</ion-select-option>
+                                <ion-select-option value="600">600</ion-select-option>
+                                <ion-select-option value="700">700</ion-select-option>
+                                <ion-select-option value="800">800</ion-select-option>
+                                <ion-select-option value="900">900</ion-select-option>
+                                <ion-select-option value="1000">1000</ion-select-option>
+                                <ion-select-option value="1100">1100</ion-select-option>
+                                <ion-select-option value="1200">1200</ion-select-option>
+                            </ion-select>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ion-card-content>
